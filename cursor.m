@@ -28,9 +28,6 @@ static const luaL_Reg cursorlib[] = {
 };
 
 
-/* NOTE: The substring "mjolnir_jstevenson_foobar_internal" in the following function's name
-         must match the require-path of this file, i.e. "mjolnir.jstevenson.foobar.internal". */
-
 int luaopen_mjolnir_jstevenson_cursor_internal(lua_State* L) {
     luaL_newlib(L, cursorlib);
     return 1;

@@ -12,8 +12,8 @@ version = "0.1-1"
 
 -- General metadata:
 
-local url = "github.com/yourname/mjolnir.jstevenson.cursor"
-local desc = "Mjolnir module to add and subtract numbers."
+local url = "github.com/jakestevenson/mjolnir.jstevenson.cursor"
+local desc = "Mjolnir module to interact with the mouse cursor."
 
 source = {url = "git://" .. url}
 description = {

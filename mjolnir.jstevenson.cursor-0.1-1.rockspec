@@ -1,7 +1,7 @@
 -- `package` is the require-path.
 --
 --    Note: this must match the filename also.
-package = "mjolnir.yourid.cursor"
+package = "mjolnir.jstevenson.cursor"
 
 -- `version` has two parts, your module's version (0.1) and the
 --    rockspec's version (1) in case you change metadata without
@@ -12,7 +12,7 @@ version = "0.1-1"
 
 -- General metadata:
 
-local url = "github.com/yourname/mjolnir.yourid.cursor"
+local url = "github.com/yourname/mjolnir.jstevenson.cursor"
 local desc = "Mjolnir module to add and subtract numbers."
 
 source = {url = "git://" .. url}
@@ -43,10 +43,10 @@ build = {
   type = "builtin",
   modules = {
     -- This is the top-level module:
-    ["mjolnir.yourid.cursor"] = "cursor.lua",
+    ["mjolnir.jstevenson.cursor"] = "cursor.lua",
 
     -- If you have an internal C or Objective-C submodule, include it here:
-    ["mjolnir.yourid.cursor.internal"] = "cursor.m",
+    ["mjolnir.jstevenson.cursor.internal"] = "cursor.m",
 
     -- Note: the key on the left side is the require-path; the value
     --       on the right is the filename relative to the current dir.

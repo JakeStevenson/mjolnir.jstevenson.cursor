@@ -1,4 +1,4 @@
-local cursor  = require "mjolnir.yourid.cursor.internal"
+local cursor  = require "mjolnir.jstevenson.cursor.internal"
 -- If you don't have a C or Objective-C submodule, the above line gets simpler:
 -- local foobar = {}
 

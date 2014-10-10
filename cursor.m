@@ -51,11 +51,18 @@ static int cursor_screen(lua_State* L){
     return 1;
 }
 
+static int cursor_show(lua_State* L){
+    NSScreen* screen = get_screen_arg(L, 1);
+    CGDisplayShowCursor(toDisplayId(screen));
+    return 1;
+}
+
 static const luaL_Reg cursorlib[] = {
     {"warptopoint", cursor_warpToPoint},
     {"movetopoint", cursor_moveToPoint},
     {"position", cursor_position},
     {"screen", cursor_screen},
+    {"show", cursor_show},
     {} // necessary sentinel
 };
 

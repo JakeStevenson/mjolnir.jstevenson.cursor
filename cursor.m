@@ -37,10 +37,25 @@ static int cursor_moveToPoint(lua_State* L){
     return 1;
 }
 
+static int cursor_screen(lua_State* L){
+    NSPoint mouseLoc = [NSEvent mouseLocation];
+    NSEnumerator *screenEnum = [[NSScreen screens] objectEnumerator];
+    NSScreen *screen;
+    while ((screen = [screenEnum nextObject]) && !NSMouseInRect(mouseLoc, [screen frame], NO));
+
+    NSScreen** screenptr = lua_newuserdata(L, sizeof(NSScreen**));
+    *screenptr = screen;
+
+    luaL_getmetatable(L, "mjolnir.screen");
+    lua_setmetatable(L, -2);
+    return 1;
+}
+
 static const luaL_Reg cursorlib[] = {
     {"warptopoint", cursor_warpToPoint},
     {"movetopoint", cursor_moveToPoint},
     {"position", cursor_position},
+    {"screen", cursor_screen},
     {} // necessary sentinel
 };
 
